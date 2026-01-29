@@ -1,0 +1,31 @@
+from typing_extensions import Annotated
+from zenml import pipeline, step
+from zenml.logger import get_logger
+
+try:
+    from utils import log_dashboard_urls  # type: ignore
+except ImportError:
+    log_dashboard_urls = lambda name: print(f"📊 Pipeline '{name}' completed!")
+
+logger = get_logger(__name__)
+
+
+@step
+def multiply(number: int, factor: int = 2) -> Annotated[int, "product"]:
+    logger.info(f"Multiplying {number} by {factor}")
+    result = number * factor
+    logger.info(f"Result: {result}")
+    return result
+
+
+@pipeline
+def param_pipeline(number: int = 3, factor: int = 2) -> int:
+    result = multiply(number=number, factor=factor)
+    return result
+
+
+if __name__ == "__main__":
+    logger.info("Starting parameterized pipeline")
+    run = param_pipeline(number=5, factor=10)
+
+    log_dashboard_urls("param_pipeline")
