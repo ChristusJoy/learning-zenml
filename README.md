@@ -4,7 +4,8 @@ A hands-on tutorial repository to learn ZenML from scratch. This repository cont
 
 ## About
 
-ZenML is an extensible, open-source MLOps framework for creating portable, production-ready ML pipelines. This repository provides a structured learning path with 6 practical examples that build on each other.
+ZenML is an extensible, open-source MLOps framework for creating portable, production-ready ML pipelines. This repository provides a structured learning path with 6 practical examples that build on each other. 
+After completing this tutorial feel free to explore an end to end MLOps project using ZenML with data drift simulation [here](https://github.com/ChristusJoy/vehicle-insurance-zenml).
 
 ---
 
@@ -454,7 +455,7 @@ zenml login --local
 
 ## Next Steps
 
-After completing this tutorial, explore:
+After completing this tutorial, Checkout my [Vehicle insuracne ZenMl](https://github.com/ChristusJoy/vehicle-insurance-zenml) project which explores an end to end pipeline for a sample project.
 
 1. **Stacks & Components** - Deploy to cloud infrastructure
 2. **Model Registry** - Version and manage models
